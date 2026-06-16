@@ -1,0 +1,5 @@
+{
+  "name": "OptiImage - Optimizador de Imágenes",
+  "description": "Convierte y optimiza tus imágenes a formatos modernos como WebP y AVIF con control total sobre las dimensiones.",
+  "requestFramePermissions": []
+}
