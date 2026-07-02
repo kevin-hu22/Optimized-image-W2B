@@ -62,7 +62,7 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-4 hidden sm:flex">
-            <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">v2.0.0</span>
+            <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">v2.0.1</span>
           </div>
         </div>
       </header>
