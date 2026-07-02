@@ -171,7 +171,7 @@ export default function ImageOptimizer() {
     const extension = targetFormat;
     const originalName = img.file.name.split('.').slice(0, -1).join('.');
     a.href = img.optimizedUrl;
-    a.download = `${originalName}-optimized.${extension}`;
+    a.download = `${originalName}.${extension}`;
     a.click();
   };
 
@@ -185,7 +185,7 @@ export default function ImageOptimizer() {
     optimizedImages.forEach((img) => {
       const extension = targetFormat;
       const originalName = img.file.name.split('.').slice(0, -1).join('.');
-      const fileName = `${originalName}-optimized.${extension}`;
+      const fileName = `${originalName}.${extension}`;
       zip.file(fileName, img.optimizedBlob!);
     });
 

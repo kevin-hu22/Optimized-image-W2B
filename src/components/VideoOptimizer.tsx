@@ -177,7 +177,7 @@ export default function VideoOptimizer() {
     const extension = targetFormat;
     const originalName = vid.file.name.split('.').slice(0, -1).join('.');
     a.href = vid.optimizedUrl;
-    a.download = `${originalName}-optimized.${extension}`;
+    a.download = `${originalName}.${extension}`;
     a.click();
   };
 
@@ -191,7 +191,7 @@ export default function VideoOptimizer() {
     optimizedVideos.forEach((vid) => {
       const extension = targetFormat;
       const originalName = vid.file.name.split('.').slice(0, -1).join('.');
-      const fileName = `${originalName}-optimized.${extension}`;
+      const fileName = `${originalName}.${extension}`;
       zip.file(fileName, vid.optimizedBlob!);
     });
 
