@@ -4,10 +4,12 @@
  */
 
 import React, { useState } from 'react';
-import { Image as ImageIcon, Video, FileArchive } from 'lucide-react';
+import { Image as ImageIcon, Video } from 'lucide-react';
 import { cn } from './lib/utils';
 import ImageOptimizer from './components/ImageOptimizer';
 import VideoOptimizer from './components/VideoOptimizer';
+import BrandMark from './components/BrandMark';
+import ToolSwitcher from './components/ToolSwitcher';
 
 type Tab = 'images' | 'videos';
 
@@ -19,19 +21,7 @@ export default function App() {
       {/* Header */}
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className={cn(
-              "w-8 h-8 rounded-lg flex items-center justify-center transition-colors",
-              activeTab === 'images' ? "bg-orange-500" : "bg-blue-500"
-            )}>
-              {activeTab === 'images' ? (
-                <ImageIcon className="text-white w-5 h-5" />
-              ) : (
-                <Video className="text-white w-5 h-5" />
-              )}
-            </div>
-            <h1 className="text-xl font-bold tracking-tight">OptiMedia</h1>
-          </div>
+          <BrandMark />
           
           {/* Tabs */}
           <div className="flex bg-gray-100 p-1 rounded-xl">
@@ -61,7 +51,8 @@ export default function App() {
             </button>
           </div>
 
-          <div className="flex items-center gap-4 hidden sm:flex">
+          <div className="hidden sm:flex items-center gap-3">
+            <ToolSwitcher current="optimizer" />
             <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">v2.0.1</span>
           </div>
         </div>
@@ -75,7 +66,7 @@ export default function App() {
       <footer className="max-w-6xl mx-auto px-6 py-12 border-t border-gray-100 mt-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-sm text-gray-400">
-            © 2026 OptiMedia. Herramienta de optimización local.
+            © 2026 W2B Agency. Herramienta de optimización local.
           </div>
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest">

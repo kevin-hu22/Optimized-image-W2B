@@ -1,20 +1,43 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# W2B Optimizer
 
-# Run and deploy your AI Studio app
+Optimizador de imágenes y video para el equipo de W2B Agency. Convierte a
+formatos modernos (WebP, AVIF) con control sobre dimensiones y calidad.
 
-This contains everything you need to run your app locally.
+Todo el procesamiento ocurre **en el navegador** — ffmpeg.wasm para video y
+Canvas para imágenes. Ningún archivo sale de la máquina de quien lo usa.
 
-View your app in AI Studio: https://ai.studio/apps/93e4ca48-43f7-400b-878d-d84645581285
+React 19 · Vite · Tailwind 4 · ffmpeg.wasm
 
-## Run Locally
+**En producción: <https://optimized-image-w2b.vercel.app/>**
 
-**Prerequisites:**  Node.js
+## Arranque
 
+```sh
+npm install
+npm run dev          # http://localhost:3000
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+No hace falta ningún `.env` para optimizar. `GEMINI_API_KEY` es opcional y solo
+habilita las sugerencias con IA; sin ella la herramienta funciona igual.
+
+```sh
+cp .env.example .env.local   # solo si quieres las sugerencias con IA
+```
+
+## Comandos
+
+```sh
+npm run dev       # servidor de desarrollo
+npm run build     # build de producción a dist/
+npm run preview   # servir el build local
+npm run lint      # typecheck (tsc --noEmit)
+npm run clean     # borrar dist/
+```
+
+## Otras herramientas del equipo
+
+- [W2B CRM](https://crm.w2bagency.com/) — pipeline, contactos y cotizaciones
+- [W2B Tasks](https://task.w2bagency.com/) — proyectos, tareas y dailies
+
+El header de la app enlaza a ambas. La lista vive en `src/lib/tools.ts` y está
+duplicada en los otros dos repos: al agregar una herramienta, actualizar los tres.
